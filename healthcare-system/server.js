@@ -21,6 +21,10 @@ db.once('open', () => {
   console.log('Connected to MongoDB');
 });
 
+// Import and use the patient router
+const patientRouter = require('./routes/patients');
+app.use('/patients', patientRouter);
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
